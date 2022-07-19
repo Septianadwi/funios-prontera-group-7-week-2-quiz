@@ -28,3 +28,20 @@ if username != nil {
     print("Nama kamu terdiri dari \(username ?? "tejo".count) huruf") // Fix the error
     print("Nama kamu terdiri dari \((username ?? "tejo").count) huruf") // Fix the error
 }
+
+
+class Person {
+    var firstName: String?
+    var lastName: String?
+    var gender = "perempuan"
+     
+    init(gender: String) {
+        self.gender = gender
+    }
+}
+ 
+class Student: Person {
+    var school: String?
+}
+ 
+let student = Student(gender: "laki-laki")
