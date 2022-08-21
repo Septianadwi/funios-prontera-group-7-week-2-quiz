@@ -1,19 +1,31 @@
 import UIKit
 
+let name: String? = "ana"
 /* Quiz Optional */
 func getUsername(userID: String?) -> String! { // jangan dirubah
     // Check jika userID tidak nil maka return {nama kamu}. Jika userID nil maka return nil.
+    if userID != nil {
+        return name ?? "ana"
+    } else {
+        return nil
+    }
 }
+getUsername(userID: nil)
+
 
 let usernameNoData = getUsername(userID: nil) // jangan dirubah
-print("Namaku adalah \(usernameNoData! + " funios")") // Fix the error, pastikan outputnya harus seperti ini "Namaku adalah {nama kamu} funios". dengan tetap mempertahankan variabel usernameNoData disitu.
+print("Namaku adalah \(usernameNoData ?? "Ana"  + " funios")")// Fix the error, pastikan outputnya harus seperti ini "Namaku adalah {nama kamu} funios". dengan tetap mempertahankan variabel usernameNoData disitu.
+//
 
-let username = getUsername(userID: "AnyID") // jangan dirubah
-if username == nil {
-    print("Usernamenya \(username)") // Fix the warning without using {default value or `??`}
-    print("Usernamenya tidak ada \(username != nil)") // Should print true
-    print("Nama kamu terdiri dari \(username ?? "tejo".count) huruf") // Fix the error
-}
+    let username = getUsername(userID: "AnyID") // jangan dirubah
+    if username != nil {
+        print("Usernamenya \(username!)") // Fix the warning without using {default value or `??`}
+        print("Usernamenya tidak ada \(username != nil)") // Should print true
+        print("Nama kamu terdiri dari \(username!.count) huruf") // Fix the error
+    }
+
+    
+//
 
 /* Quiz Class vs Struct
  Buatlah 1 buah struct dengan minimal 2 property.
